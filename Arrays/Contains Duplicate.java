@@ -40,3 +40,16 @@ class Solution {
         return false;
     }
 }
+
+/* Time and Space complexity
+TC: 
+
+
+SC:
+
+
+Aproach
+
+
+
+*/
