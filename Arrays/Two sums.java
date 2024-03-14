@@ -47,10 +47,10 @@ class Solution {
 }
 
 /* Time and Space complexity
-TC: 
-
-
-SC:
+TC: O(n)
+The time complexity of this solution is O(n) because we iterate through the array of numbers only once. 
+The space complexity is also O(n) because we use a HashMap to store the complement values and their corresponding indices.
+SC:0(n)
 
 
 Aproach
