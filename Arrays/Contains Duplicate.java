@@ -42,14 +42,24 @@ class Solution {
 }
 
 /* Time and Space complexity
-TC: 
+TC: O(n)
+The code iterates through the 'nums' array once, checking if each element is already in the 'duplicateSet' HashSet. 
+The HashSet operations (add and contains) have an average time complexity of O(1), so the overall time complexity of the code is O(n)
 
 
-SC:
+SC: O(n)
 
 
 Aproach
 
+Initialize a HashSet named duplicateSet. HashSet is chosen as its store only unique values and have constant-time complexity for basic operations like add and contains..
 
+Iterate through the input array nums.
+
+For each element nums[i], check if it already exists in the duplicateSet. If it does, return true, indicating that a duplicate has been found.
+
+If the element doesn't exist in the duplicateSet, add it to the set.
+
+If the loop completes without finding any duplicates, return false, indicating that there are no duplicates in the array.
 
 */
