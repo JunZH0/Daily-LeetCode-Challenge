@@ -48,13 +48,22 @@ class Solution {
 
 /* Time and Space complexity
 TC: O(n)
-The time complexity of this solution is O(n) because we iterate through the array of numbers only once. 
-The space complexity is also O(n) because we use a HashMap to store the complement values and their corresponding indices.
+The code uses a HashMap to store the complements of the current element. The loop iterates through the array once, and for each element, 
+it performs constant time operations (get and put in the HashMap). Therefore, the overall time complexity is O(n)
 SC:0(n)
 
 
 Aproach
 
+Initialize a HashMap named complements. This HashMap is used to store the complement of each element encountered so far along with its index.
+
+Iterate through the input array nums.
+
+For each element nums[i], check if its complement (i.e., target - nums[i]) exists in the complements HashMap. If it does, it means you've found the two numbers that add up to the target. Return an array containing their indices: [i, complementIndex].
+
+If the complement doesn't exist in the complements HashMap, add the current element's complement along with its index to the HashMap. The complement is calculated as target - nums[i].
+
+If the loop completes without finding a pair of numbers that sum up to the target, return an empty array new int[0]
 
 
 */
