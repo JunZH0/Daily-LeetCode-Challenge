@@ -37,3 +37,21 @@ class Solution {
     }
 }
 
+/* Time and Space complexity
+TC: O(n log n)
+This approach has a time complexity of O(n log n), where n is the length of the longer of the two input strings s and t. 
+This is because sorting the character arrays takes O(n log n) time complexity, where n is the length of the arrays.
+SC:0(n)
+
+
+Aproach
+
+Convert the input strings s and t into character arrays sArray and tArray respectively using the toCharArray method. This allows you to work with individual characters of the strings.
+
+Sort both character arrays sArray and tArray using Arrays.sort method. Sorting the arrays ensures that if the strings are anagrams, they will have the same characters in the same order after sorting.
+
+Compare the sorted arrays using Arrays.equals method. If the sorted arrays are equal, it means that the original strings s and t are anagrams of each other, so return true. Otherwise, they are not anagrams, so return false.
+
+
+*/
+
