@@ -52,6 +52,47 @@ Sort both character arrays sArray and tArray using Arrays.sort method. Sorting t
 
 Compare the sorted arrays using Arrays.equals method. If the sorted arrays are equal, it means that the original strings s and t are anagrams of each other, so return true. Otherwise, they are not anagrams, so return false.
 
+** Faster approach below **
+*/
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length()) return false;
+        int[] arr = new int[26];
+        for(char c: s.toCharArray()) {
+            arr[c-'a']++;
+        }
+        for(char c: t.toCharArray()) {
+            if(arr[c-'a'] <= 0) return false;
+            arr[c-'a']--;
+        }
+        for(int i=0; i<26; i++) {
+            if(arr[i] != 0) return false;
+        }
+        return true;
+    }
+}
+
+/* Time and Space complexity
+TC: O(n)
+This approach also has a time complexity of O(n), where n is the length of the input strings s and t, as it only requires traversing each string once and updating the character frequencies in the array. 
+SC:0(n)
+
+
+* Aproach *
+
+If the lengths of the two input strings s and t are not equal, return false, as strings of different lengths cannot be anagrams.
+
+Create an integer array arr of size 26 to store the frequency of characters. We assume that the strings only contain lowercase English letters.
+
+Traverse string s and increment the frequency of each character in the array arr.
+
+Traverse string t and decrement the frequency of each character in the array arr. If any character frequency becomes negative during this process, it means that the character occurs more times in string t than in string s, so return false.
+
+After traversing both strings, check if all character frequencies in the array arr are zero. If any frequency is non-zero, return false, indicating that the strings are not anagrams.
+
+If all character frequencies are zero, return true, indicating that the strings are anagrams.
+
 
 */
 
