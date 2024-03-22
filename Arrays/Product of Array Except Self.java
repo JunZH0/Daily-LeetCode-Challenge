@@ -48,7 +48,31 @@ class Solution {
     }
 }
 
-/*
+/* Time and Space complexity
+TC: O(n)
+Forward Pass (Calculating leftProducts and storing in answer array): This pass iterates through the input array once, performing constant time operations for each element. So, it has a time complexity of O(n), where n is the number of elements in the input array.
+Backward Pass (Calculating products of elements to the right and updating answer array): Similarly, this pass iterates through the input array once, performing constant time operations for each element. So, it also has a time complexity of O(n).
+SC:0(1)
+
+
+Aproach
+
+* Forward Pass (Calculating leftProducts and storing in answer array): *
+
+Initialize the answer array with the same size as the input array nums.
+Start with answer[0] = 1, as there are no elements to the left of the first element.
+Iterate through the input array from index 1 to n-1.
+For each index i, calculate the product of all elements to the left of nums[i] and store it in answer[i]. This can be done by multiplying answer[i-1] with nums[i-1].
+After this pass, the answer array will contain products of all elements to the left of each element.
+
+* Backward Pass (Calculating products of elements to the right and updating answer array): *
+
+Initialize a variable rightProduct = 1.
+Iterate through the input array from index n-1 to 0.
+For each index i, calculate the product of all elements to the right of nums[i] by multiplying rightProduct with nums[i].
+Multiply the calculated product with answer[i] and update answer[i] with the result.
+Update rightProduct by multiplying it with nums[i] for the next iteration.
+After this pass, the answer array will contain the final result, where each element is the product of all elements in nums except nums[i].
 
 
 */
