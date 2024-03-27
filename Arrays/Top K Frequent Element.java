@@ -86,3 +86,61 @@ Copy the first K elements from the result List into the topK array.
 Return the topK array containing the top K frequent elements.
 
 */
+
+/* 
+
+Priority Queue approach
+
+*/
+
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+       HashMap<Integer, Integer> map = new HashMap();
+
+       for(int i : nums) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+       }
+
+       PriorityQueue<Map.Entry<Integer, Integer>> pq = 
+            new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
+
+        for(Map.Entry entry : map.entrySet()) {
+            pq.add(entry);
+        }
+
+        int[] output = new int[k];
+        for(int i = 0; i < k; i++) {
+            output[i] = pq.poll().getKey();
+        }
+        return output;
+    }    
+}
+
+/* Time and Space complexity
+TC: O(n log k)
+The time complexity is O(n) for building the frequency map, and O(k log k) for adding elements to the priority queue and retrieving the top k elements. 
+Therefore, the overall time complexity is O(n log k).
+
+SC: O(n)
+
+
+Aproach
+
+Count Frequencies:
+The code starts by iterating through the input array nums and counts the frequency of each element using a HashMap named map.
+In the HashMap map, each key represents a unique element from nums, and its corresponding value represents the frequency of that element.
+
+Building the MaxHeap (PriorityQueue):
+After counting frequencies, the code initializes a PriorityQueue (pq) to store entries from the HashMap map.
+The PriorityQueue is configured as a maxHeap, where entries with higher frequencies are prioritized.
+The maxHeap comparator is defined such that entries with higher values (frequencies) come before entries with lower values.
+As we iterate through the entries of the map, each entry (key-value pair) is added to the maxHeap.
+
+Extracting Top K Frequent Elements:
+Once all entries are added to the maxHeap, we retrieve the top k frequent elements.
+We create an array output of size k to store the top K frequent elements.
+We repeatedly extract the top element (entry with the highest frequency) from the maxHeap using pq.poll() and store its key (element) in the output array.
+Since we have a maxHeap, the top element (entry with the highest frequency) is always the one with the maximum frequency among the top k elements.
+Finally, we return the output array containing the top K frequent elements.
+
+*/
