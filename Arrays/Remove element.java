@@ -66,7 +66,29 @@ class Solution {
 
 /*
 
+/* Time and Space complexity
+TC: O(n)
+It runs in O(n) time complexity, where n is the number of elements in the input array nums, as it iterates through the array only once.
+SC: O(1)
+
+
 Aproach
+
+Initialization:
+Initialize a variable k to 0. This variable will be used to track the position where the next non-val element should be placed.
+
+Iterating through the Array:
+Iterate through the array nums using a for loop.
+
+Removing the Element:
+For each element at index i, check if it is equal to the specified value val.
+If the element is not equal to val, it means it should be kept in the modified array.
+Copy the element to the position indicated by k in the array nums.
+Increment k by 1 to move to the next position where the next non-val element should be placed.
+
+Returning the Length:
+After the loop finishes, k holds the index where the next non-val element should be placed.
+Since array indices are zero-based, the length of the resulting array after removal of val occurrences is k. Therefore, k is returned as the final result.
 
 
 */
