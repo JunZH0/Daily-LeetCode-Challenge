@@ -1,4 +1,4 @@
-/* 
+package Medium;/*
 
 Difficulty: Medium
 
