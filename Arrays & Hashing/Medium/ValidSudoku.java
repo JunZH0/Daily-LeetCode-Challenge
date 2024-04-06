@@ -32,3 +32,14 @@ class Solution {
         return true;
     }
 }
+
+
+/*
+Time and space complexity
+
+TC: O(1)
+The code iterates through each cell in a 9x9 Sudoku board, performing constant time operations for each cell. Therefore, the time complexity is O(1)
+SC: 0(1)
+
+
+*/
