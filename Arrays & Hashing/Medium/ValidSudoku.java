@@ -41,5 +41,19 @@ TC: O(1)
 The code iterates through each cell in a 9x9 Sudoku board, performing constant time operations for each cell. Therefore, the time complexity is O(1)
 SC: 0(1)
 
+Aproach
 
+Initialize a HashSet named seen to keep track of seen elements.
+
+Iterate through each cell of the Sudoku board using two nested loops.
+
+For each cell, retrieve the current digit (number) from the board.
+
+If the current digit is not '.', indicating an empty cell:
+Check if the current digit is already present in the HashSet for the respective row, column, or 3x3 block.
+
+If the digit is already in the HashSet, it indicates a duplicate, and the Sudoku board is invalid, so return false.
+Otherwise, add the current digit to the HashSet for the row, column, and 3x3 block.
+
+If all cells have been iterated over without finding any duplicates, return true, indicating that the Sudoku board is valid.
 */
