@@ -1,12 +1,14 @@
 import LinkedList.LinkedList;
+import Stack.Stack;
+import Stack.StringReverser;
 
 public class Main {
     public static void main(String[] args) {
-        var list = new LinkedList();
-        list.addLast(10);
-        list.addLast(20);
-        list.addLast(30);
-        list.removeLast();
-        System.out.println(list.contains(10));
+       String str = "";
+
+       StringReverser reverser =  new StringReverser();
+       var result = reverser.reverse(null);
+
+       System.out.println(result);
     }
 }

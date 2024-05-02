@@ -76,8 +76,7 @@ public class LinkedList {
             first = last = null;
             return;
         }
-       var previous = getPrevious(last);
-       last = previous;
+        last = getPrevious(last);
        last.next = null;
     }
 
