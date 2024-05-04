@@ -61,17 +61,18 @@ SC:0(n)
 
 Aproach
 
-Initialization:
-Initialize a new integer array ans with a length of 2 * nums.length. This array will hold the concatenated elements.
+Sort the Array: First, sort the array of people's weights in non-decreasing order. Sorting will help in pairing up the heaviest and lightest people efficiently.
 
-Concatenation:
-Iterate through the elements of the input array nums.
-For each element at index i, copy its value to the corresponding position in the ans array.
-Additionally, copy the same element to the position i + nums.length in the ans array. This effectively places a copy of each element after the original array elements.
+Use Two Pointers (Greedy Approach): Initialize two pointers, one at the beginning (left) and one at the end (right) of the sorted array. These pointers 
+represent the two people being considered for boarding the boat.
 
-Returning the Concatenation:
-After the loop finishes, the ans array contains the concatenation of the original array nums with itself.
-Return the ans array as the result.
+Iterate While Both Pointers Don't Overlap: While the left pointer is less than or equal to the right pointer, do the following:
 
+Check if the weight of the person at the left pointer and the weight of the person at the right pointer can fit into a single boat
+(i.e., their sum is less than or equal to the weight limit). If so, increment the left pointer to consider the next lightest person.
+Decrement the right pointer to consider the next heaviest person.
+Increment the count of boats required.
+
+Return the Count of Boats: After the while loop terminates (when left and right pointers overlap), return the count of boats required to rescue all people.
 */
 
