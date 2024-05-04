@@ -49,3 +49,29 @@ class Solution {
     }  
 }
 
+
+/*
+
+/* Time and Space complexity
+TC: O(n log n)
+ The time complexity is O(n log n), where n is the number of people. 
+ This complexity arises primarily from the sorting operation performed using Arrays.sort(people)
+SC:0(n)
+
+
+Aproach
+
+Initialization:
+Initialize a new integer array ans with a length of 2 * nums.length. This array will hold the concatenated elements.
+
+Concatenation:
+Iterate through the elements of the input array nums.
+For each element at index i, copy its value to the corresponding position in the ans array.
+Additionally, copy the same element to the position i + nums.length in the ans array. This effectively places a copy of each element after the original array elements.
+
+Returning the Concatenation:
+After the loop finishes, the ans array contains the concatenation of the original array nums with itself.
+Return the ans array as the result.
+
+*/
+
